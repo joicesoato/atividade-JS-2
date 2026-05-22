@@ -52,4 +52,10 @@ http://localhost:5500
 
 ## Prints do Projeto
 
-Adicionar aqui os prints da atividade.
+![print](image.png)
+
+![print](image-1.png)
+
+![print](image-2.png)
+
+![print](image-3.png)
