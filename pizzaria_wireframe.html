@@ -49,13 +49,9 @@
                     alt="Pizza Calabresa"
                 >
 
-                <p>
-                    Pizza com calabresa e cebola.
-                </p>
+                <p>Pizza com calabresa e cebola.</p>
 
-                <p class="preco">
-                    R$ 45,00
-                </p>
+                <p class="preco">R$ 45,00</p>
 
                 <button
                     class="btn-comprar"
@@ -77,13 +73,9 @@
                     alt="Pizza Frango"
                 >
 
-                <p>
-                    Pizza de frango com catupiry.
-                </p>
+                <p>Pizza de frango com catupiry.</p>
 
-                <p class="preco">
-                    R$ 50,00
-                </p>
+                <p class="preco">R$ 50,00</p>
 
                 <button
                     class="btn-comprar"
@@ -105,13 +97,9 @@
                     alt="Pizza Brócolis"
                 >
 
-                <p>
-                    Pizza Brócolis e Bacon.
-                </p>
+                <p>Pizza Brócolis e Bacon.</p>
 
-                <p class="preco">
-                    R$ 55,00
-                </p>
+                <p class="preco">R$ 55,00</p>
 
                 <button
                     class="btn-comprar"
@@ -128,14 +116,22 @@
         <!-- CARRINHO -->
         <section class="carrinho">
 
-            <h2> Carrinho</h2>
+            <h2>Carrinho</h2>
 
             <ul id="lista-carrinho"></ul>
 
+            <!-- TOTAL -->
             <div class="total-carrinho">
-                Total: R$
-                <span id="total">0</span>
+
+                Total:
+                R$ <span id="total">0</span>
+
             </div>
+
+            <!-- BOTÃO -->
+            <button id="btn-finalizar">
+                Finalizar Pedido
+            </button>
 
         </section>
 
@@ -146,6 +142,46 @@
         <p>© 2026 Pizzaria</p>
     </footer>
 
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modal-overlay">
+
+        <div class="modal">
+
+            <h2>Resumo do Pedido</h2>
+
+            <!-- LISTA -->
+            <div id="modal-pedidos"></div>
+
+            <!-- QUANTIDADE -->
+            <p>
+                Quantidade:
+                <span id="modal-quantidade">0</span>
+            </p>
+
+            <!-- TOTAL -->
+            <p>
+                Soma final:
+                R$ <span id="modal-total">0</span>
+            </p>
+
+            <!-- BOTÕES -->
+            <div class="modal-botoes">
+
+            <button id="btn-fechar">
+                Fechar
+            </button>
+
+            <button id="btn-confirmar">
+                Confirmar Pedido
+            </button>   
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- JS -->
     <script src="app.js"></script>
 
 </body>

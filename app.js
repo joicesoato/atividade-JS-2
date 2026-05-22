@@ -96,3 +96,87 @@ function removerPizza(idPizza) {
     atualizarCarrinho();
 
 }
+
+// MODAL - SELETORES
+
+const btnFinalizar = document.querySelector("#btn-finalizar");
+
+const modalOverlay = document.querySelector("#modal-overlay");
+
+const btnFechar = document.querySelector("#btn-fechar");
+
+const btnConfirmar = document.querySelector("#btn-confirmar");
+
+const modalPedidos = document.querySelector("#modal-pedidos");
+
+const modalQuantidade = document.querySelector("#modal-quantidade");
+
+const modalTotal = document.querySelector("#modal-total");
+
+// ABRIR MODAL
+
+btnFinalizar.addEventListener("click", () => {
+
+    // Limpa conteúdo anterior
+    modalPedidos.innerHTML = "";
+
+    // Variável total
+    let total = 0;
+
+    // Percorre o carrinho
+    carrinho.forEach((pizza) => {
+
+        // Soma total
+        total += pizza.preco;
+
+        // Cria item visual
+        const item = document.createElement("div");
+
+        item.classList.add("item-modal");
+
+        item.innerHTML = `
+            <span>${pizza.nome}</span>
+
+            <span>R$ ${pizza.preco},00</span>
+        `;
+
+        // Adiciona no modal
+        modalPedidos.appendChild(item);
+
+    });
+
+    // Quantidade total
+    modalQuantidade.textContent = carrinho.length;
+
+    // Soma final
+    modalTotal.textContent = total;
+
+    // Exibe modal
+    modalOverlay.style.display = "flex";
+
+});
+
+// FECHAR MODAL
+
+btnFechar.addEventListener("click", () => {
+
+    modalOverlay.style.display = "none";
+
+});
+
+// CONFIRMAR PEDIDO
+
+btnConfirmar.addEventListener("click", () => {
+
+    alert("Pedido confirmado com sucesso!");
+
+    // Limpa carrinho
+    carrinho = [];
+
+    // Atualiza carrinho visual
+    atualizarCarrinho();
+
+    // Fecha modal
+    modalOverlay.style.display = "none";
+
+});
